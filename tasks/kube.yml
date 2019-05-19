@@ -1,0 +1,9 @@
+---
+
+- name: Download yaml for kube create
+  get_url:
+    url: {{ yaml }}
+    dest: recipe.yml
+
+- name: kube create
+  command: kube create -f recipe.yml
