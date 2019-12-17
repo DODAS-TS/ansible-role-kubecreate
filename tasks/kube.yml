@@ -4,7 +4,7 @@
   copy:
     content: |
       {{ manifest_file }}
-    dest:  /tmp/values_{{ name }}-template.txt
+    dest:  /tmp/manifest_{{ name }}-template.txt
 
 - name: compile values
   template:
