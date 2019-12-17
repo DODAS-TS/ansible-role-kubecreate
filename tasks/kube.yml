@@ -1,9 +1,15 @@
 ---
 
-- name: Download yaml for kube create
-  get_url:
-    url: {{ yaml }}
-    dest: recipe.yml
+- name: write values template
+  copy:
+    content: |
+      {{ manifest_file }}
+    dest:  /tmp/values_{{ name }}-template.txt
+
+- name: compile values
+  template:
+    src:  /tmp/manifest_{{ name }}-template.txt
+    dest: /tmp/manifest_{{ name }}.yml
 
 - name: kube create
-  command: kube create -f recipe.yml
+  command: kube apply -f /tmp/manifest_{{ name }}.yml
