@@ -1,2 +1,6 @@
 ---
-- include: kube.yml
+- include: create_from_content.yml
+  when: (manifest_file is defined)
+
+- include: create_from_url.yml
+  when: (url is defined)

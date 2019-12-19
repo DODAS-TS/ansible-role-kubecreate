@@ -1,2 +1,8 @@
 ---
-yaml: http://dummy
+namespace: default
+inline_options: ""
+
+url:
+#or
+manifest_file:
+name:

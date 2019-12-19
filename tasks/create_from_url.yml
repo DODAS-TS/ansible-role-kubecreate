@@ -1,0 +1,3 @@
+
+- name: kube create
+  command: kubectl apply -n {{ namespace }} -f {{ url }} {{ inline_options }}
