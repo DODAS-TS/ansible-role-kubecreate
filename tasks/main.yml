@@ -1,6 +1,6 @@
 ---
 - include: create_from_content.yml
-  when: (manifest_file!="")
+  when: (manifest_file != "")
 
 - include: create_from_url.yml
-  when: (url!="")
+  when: (url != "")
