@@ -5,10 +5,11 @@
     content: |
       {{ manifest_file }}
     dest:  /tmp/manifest_{{ name }}-template.txt
+  delegate_to: localhost
 
 - name: compile values
   template:
-    remote_src:  /tmp/manifest_{{ name }}-template.txt
+    src: /tmp/manifest_{{ name }}-template.txt
     dest: /tmp/manifest_{{ name }}.yml
 
 - name: kube create
