@@ -8,7 +8,7 @@
 
 - name: compile values
   template:
-    src:  /tmp/manifest_{{ name }}-template.txt
+    remote_src:  /tmp/manifest_{{ name }}-template.txt
     dest: /tmp/manifest_{{ name }}.yml
 
 - name: kube create
